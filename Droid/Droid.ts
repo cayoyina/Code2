@@ -6,6 +6,9 @@ export namespace Droid {
     //   z: number,
     //}
 
+     let puffer: string = "puffer" 
+
+
     interface Command {
         module: string,
         method: string,
@@ -18,10 +21,20 @@ export namespace Droid {
         const command: Command = {
             module: "Chassis",
             method: "move",
-            data: "left",
+            data: "forward",
         }
+
+         if (puffer == "stop") {
+            command.data = "left";
+            puffer = "puffer";
+            
+        }else {puffer = "stop" }
+
         console.log(command);
         return command;
+
+       
+
     }
 
 
